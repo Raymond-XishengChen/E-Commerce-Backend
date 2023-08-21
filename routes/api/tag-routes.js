@@ -94,7 +94,8 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-    .then(productData => {
+  })
+  .then(productData => {
       if (!productData) {
         res.status(404).json({message: 'Tag Not Found With This ID!'});
         return;
@@ -106,6 +107,6 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     })
   })
-});
+
 
 module.exports = router;
